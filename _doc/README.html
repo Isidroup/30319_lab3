@@ -1,0 +1,499 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+@font-face {
+  font-family: "Ubuntu";
+  src: url("https://fonts.googleapis.com/css2?family=Ubuntu&amp;display=swap");
+}
+figure {
+  text-align: center;
+  display: table;
+  max-width: 80%;
+  /* demo; set some amount (px or %) if you can */
+  margin: auto;
+  /* not needed unless you want centered */
+}
+img {
+  vertical-align: middle;
+}
+.markdown-preview.markdown-preview {
+  font-family: "Ubuntu", sans-serif;
+}
+.markdown-preview.markdown-preview table {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.markdown-preview.markdown-preview h1 {
+  text-align: center;
+  font-weight: 400;
+  padding-bottom: 0.1em;
+  font-style: italic;
+}
+.markdown-preview.markdown-preview h2 {
+  font-weight: 40;
+  padding-bottom: 0.1em;
+  border-top: 1px solid black;
+  border-bottom: 2px solid black;
+}
+.markdown-preview.markdown-preview h6 {
+  font-weight: 40;
+  font-size: 8pt;
+  color: cadetblue;
+}
+.markdown-preview.markdown-preview h3,
+.markdown-preview.markdown-preview h4,
+.markdown-preview.markdown-preview h5,
+.markdown-preview.markdown-preview li,
+.markdown-preview.markdown-preview ul,
+.markdown-preview.markdown-preview p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 40;
+}
+.markdown-preview.markdown-preview pre {
+  font-family: "Ubuntu Mono", sans-serif, "Courier New", Courier, monospace;
+}
+.markdown-preview.markdown-preview p {
+  text-align: justify;
+}
+.markdown-preview.markdown-preview details {
+  background-color: #fcfcfc;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 1%;
+}
+.markdown-preview.markdown-preview summary {
+  cursor: pointer;
+  color: CornflowerBlue;
+}
+.markdown-preview.markdown-preview mark {
+  background-color: #fff;
+  color: #a01b5d;
+  font-weight: normal;
+}
+.markdown-preview.markdown-preview img[src*="#center"] {
+  display: block;
+  margin: auto;
+}
+.markdown-preview.markdown-preview blockquote {
+  border-left: 4px solid #ccc;
+  margin: 1em 10px;
+  padding: 0.5em 10px;
+  font-size: 70%;
+}
+.markdown-preview.markdown-preview abbr[title] {
+  color: #ed6100;
+  text-decoration-line: none;
+}
+.markdown-preview.markdown-preview pre {
+  margin-top: 10px;
+}
+.markdown-preview.markdown-preview .admonition.question,
+.markdown-preview.markdown-preview .admonition.help,
+.markdown-preview.markdown-preview .admonition.faq {
+  border-left-color: rgba(111, 153, 82, 0.8);
+}
+.markdown-preview.markdown-preview .admonition.question > .admonition-title,
+.markdown-preview.markdown-preview .admonition.help > .admonition-title,
+.markdown-preview.markdown-preview .admonition.faq > .admonition-title {
+  background-color: rgba(111, 153, 82, 0.1);
+  border-bottom-color: rgba(111, 153, 82, 0.2);
+}
+.markdown-preview.markdown-preview .admonition.question > .admonition-title:before,
+.markdown-preview.markdown-preview .admonition.help > .admonition-title:before,
+.markdown-preview.markdown-preview .admonition.faq > .admonition-title:before {
+  color: #6f9952;
+  content: "\E887";
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><link rel="shortcut icon" href="https://www.unizar.es/profiles/unizarwww/themes/unizar01/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&amp;family=Ubuntu+Mono&amp;display=swap" rel="stylesheet">
+<base target="_blank">
+</head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="lab-3---generación-y-control-de-señales-con-dds">Lab 3 - Generación y Control de Señales con DDS </h1>
+<h2 id="descripción">Descripción </h2>
+<p>Este proyecto implementa una práctica de laboratorio para la generación y control de señales analógicas mediante síntesis digital directa (DDS - Direct Digital Synthesis) en la placa de desarrollo <strong>FM4-176L-S6E2CC-ETH</strong>.</p>
+<h2 id="características-principales">Características Principales </h2>
+<ul>
+<li><strong>Plataforma</strong>: FM4-176L-S6E2CC-ETH (ARM Cortex-M4)</li>
+<li><strong>Codec de Audio</strong>: WM8731</li>
+<li><strong>Frecuencia de Muestreo</strong>: 48 kHz</li>
+<li><strong>Interfaz de Audio</strong>: I2S</li>
+<li><strong>Control</strong>: Pulsadores y LEDs RGB</li>
+</ul>
+<h2 id="estructura-del-proyecto">Estructura del Proyecto </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>lab3/
+├── _doc/                    # Documentación
+├── bsp/                     # Board Support Package
+│   ├── include/
+│   │   ├── FM4_leds_sw.h   # Control de LEDs y pulsadores
+│   │   └── FM4_WM8731.h    # Driver del codec WM8731
+│   └── src/
+├── hal/                     # Hardware Abstraction Layer
+│   ├── include/
+│   │   ├── HAL_FM4_dtimer.h # Timer hardware
+│   │   ├── HAL_FM4_gpio.h   # GPIO hardware
+│   │   ├── HAL_FM4_i2c.h    # I2C hardware
+│   │   ├── HAL_FM4_i2s.h    # I2S hardware
+│   │   └── HAL_SysTick.h    # SysTick timer
+│   └── src/
+├── src/                     # Código fuente principal
+│   ├── dds.c               # Implementación DDS
+│   ├── dds.h               # Definiciones DDS
+│   ├── ejercicios.c        # Implementación de ejercicios
+│   ├── ejercicios.h        # Prototipos de ejercicios
+│   ├── main.c              # Función principal
+│   └── dds_sine_tbl257.dat # Tabla de seno para DDS
+├── test/                   # Código de pruebas
+├── build_keil/            # Proyecto Keil uVision
+└── shared/                # Código deasrrollado en otras prácticas
+    ├── include/
+    │   └── pulsaciones.h   # Gestión de pulsaciones
+    └── src/
+        └── pulsaciones.c   # Implementación de gestión de pulsaciones
+</code></pre><h2 id="ejercicios-implementados">Ejercicios Implementados </h2>
+<h3 id="ejercicio-31-generación-de-señales-en-cuadratura">Ejercicio 3.1: Generación de Señales en Cuadratura </h3>
+<ul>
+<li><strong>Función</strong>: <code>lab31()</code></li>
+<li><strong>Descripción</strong>: Genera dos señales en cuadratura de 1 kHz</li>
+<li><strong>Salida</strong>: Canal izquierdo y derecho del codec estéreo</li>
+</ul>
+<h3 id="ejercicio-32-síntesis-fm---efecto-sirena">Ejercicio 3.2: Síntesis FM - Efecto Sirena </h3>
+<ul>
+<li><strong>Función</strong>: <code>lab32()</code></li>
+<li><strong>Descripción</strong>: Genera el sonido de una alarma/sirena</li>
+<li><strong>Salida</strong>: Canal izquierdo (canal derecho a 0)</li>
+</ul>
+<h3 id="ejercicio-33-control-por-pulsaciones">Ejercicio 3.3: Control por Pulsaciones </h3>
+<ul>
+<li><strong>Función</strong>: <code>lab33(uint8_t pulsacion)</code></li>
+<li><strong>Descripción</strong>: Control de la generación de señal mediante pulsaciones</li>
+<li><strong>Control</strong>: Pulsador SW2 para activar/desactivar</li>
+</ul>
+<h2 id="sistema-dds-direct-digital-synthesis">Sistema DDS (Direct Digital Synthesis) </h2>
+<p>El proyecto implementa un sistema DDS de 16 bits que permite:</p>
+<ul>
+<li><strong>Acumulador de Fase</strong>: Control preciso de la frecuencia</li>
+<li><strong>Incremento de Fase</strong>: Determinación de la frecuencia de salida</li>
+<li><strong>Tabla de Seno</strong>: 257 puntos para síntesis de ondas sinusoidales</li>
+<li><strong>Resolución</strong>: 16 bits para alta calidad de audio</li>
+</ul>
+<h3 id="estructura-dds">Estructura DDS </h3>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token keyword keyword-typedef">typedef</span> <span class="token keyword keyword-struct">struct</span> <span class="token punctuation">{</span>
+    <span class="token class-name">uint16_t</span> phaseAccumulator<span class="token punctuation">;</span> <span class="token comment">// Acumulador de fase</span>
+    <span class="token class-name">uint16_t</span> phaseIncrement<span class="token punctuation">;</span>   <span class="token comment">// Incremento de fase</span>
+<span class="token punctuation">}</span> <span class="token class-name">dds16bits_t</span><span class="token punctuation">;</span>
+</code></pre><h2 id="hardware-utilizado">Hardware Utilizado </h2>
+<h3 id="placa-de-desarrollo-fm4-176l-s6e2cc-eth">Placa de Desarrollo FM4-176L-S6E2CC-ETH </h3>
+<ul>
+<li><strong>MCU</strong>: ARM Cortex-M4 con FPU</li>
+<li><strong>Frecuencia</strong>: 12 MHz (configurable)</li>
+<li><strong>Memoria</strong>: SRAM y Flash integradas</li>
+</ul>
+<h3 id="periféricos">Periféricos </h3>
+<ul>
+<li><strong>I2S0</strong>: Interfaz de audio estéreo</li>
+<li><strong>I2C</strong>: Comunicación con codec WM8731</li>
+<li><strong>GPIO</strong>: Control de LEDs y lectura de pulsadores</li>
+<li><strong>SysTick</strong>: Base de tiempos de 1ms</li>
+</ul>
+<h3 id="leds-y-controles">LEDs y Controles </h3>
+<ul>
+<li><strong>LED RGB</strong>: Indicador visual con 8 colores</li>
+<li><strong>LED ETH</strong>: Efecto "breathing"</li>
+<li><strong>Pulsador SW2</strong>: Control de funcionalidades</li>
+</ul>
+<h2 id="organización-de-tareas">Organización de Tareas </h2>
+<p>El proyecto utiliza un <strong>ejecutivo cíclico Round-Robin</strong> con las siguientes tareas:</p>
+<h3 id="tareas-de-1ms-systick">Tareas de 1ms (SysTick) </h3>
+<ol>
+<li><strong>Evaluación de pulsaciones</strong>: Lectura y debounce de SW2</li>
+<li><strong>Control de contador</strong>: Modificación según pulsaciones</li>
+<li><strong>Control LED RGB</strong>: Cambio de color según contador</li>
+</ol>
+<h3 id="tareas-de-audio-i2s">Tareas de Audio (I2S) </h3>
+<ol start="4">
+<li><strong>Generación DDS</strong>: Síntesis de señales cuando el buffer está libre</li>
+</ol>
+<h3 id="tareas-continuas">Tareas Continuas </h3>
+<ol start="5">
+<li><strong>Efecto Breathing</strong>: LED ETH con efecto visual</li>
+</ol>
+<h2 id="compilación-y-uso">Compilación y Uso </h2>
+<h3 id="requisitos">Requisitos </h3>
+<ul>
+<li><strong>Keil uVision 5</strong> o superior</li>
+<li><strong>ARM Compiler 6.22</strong></li>
+<li><strong>CMSIS Pack</strong>: ARM.Cortex_DFP.1.1.0</li>
+</ul>
+<h3 id="pasos-de-compilación">Pasos de Compilación </h3>
+<ol>
+<li>Abrir <code>build_keil/lab3.uvprojx</code> en Keil uVision</li>
+<li>Seleccionar el target deseado:
+<ul>
+<li><code>Test_DDS</code></li>
+<li><code>Test_Pulsaciones</code></li>
+<li><code>lab3</code></li>
+</ul>
+</li>
+<li>Compilar el proyecto (F7)</li>
+<li>Programar la placa (F8)</li>
+</ol>
+<h3 id="configuración-de-audio">Configuración de Audio </h3>
+<ul>
+<li><strong>Entrada</strong>: Line-in (ganancia 0 dB)</li>
+<li><strong>Salida</strong>: Headphone jack (ganancia 0 dB)</li>
+<li><strong>Formato</strong>: Estéreo, 48 kHz, 16 bits</li>
+</ul>
+<h2 id="uso-del-sistema">Uso del Sistema </h2>
+<ol>
+<li><strong>Conexión</strong>: Conectar auriculares al jack de salida</li>
+<li><strong>Alimentación</strong>: Alimentar la placa via USB o fuente externa</li>
+<li><strong>Control</strong>:
+<ul>
+<li>Pulsación corta de SW2: Cambiar modo/color</li>
+<li>Pulsación larga de SW2: Reset</li>
+</ul>
+</li>
+<li><strong>Indicadores</strong>:
+<ul>
+<li>LED RGB: Estado actual del sistema</li>
+<li>LED ETH: Sistema funcionando (breathing)</li>
+</ul>
+</li>
+</ol>
+<h2 id="funciones-principales">Funciones Principales </h2>
+<h3 id="control-de-dds">Control de DDS </h3>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token keyword keyword-void">void</span> <span class="token function">DDS16Bits_setPhase</span><span class="token punctuation">(</span><span class="token class-name">dds16bits_t</span> <span class="token operator">*</span>p_dds<span class="token punctuation">,</span> <span class="token class-name">uint16_t</span> phase<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">DDS16Bits_setPhaseInc</span><span class="token punctuation">(</span><span class="token class-name">dds16bits_t</span> <span class="token operator">*</span>p_dds<span class="token punctuation">,</span> <span class="token class-name">uint16_t</span> phaseinc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">int16_t</span> <span class="token function">DDS16Bits_getNextSample</span><span class="token punctuation">(</span><span class="token class-name">dds16bits_t</span> <span class="token operator">*</span>p_dds<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="control-de-audio">Control de Audio </h3>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token keyword keyword-void">void</span> <span class="token function">FM4_WM8731_init</span><span class="token punctuation">(</span><span class="token class-name">uint32_t</span> fs<span class="token punctuation">,</span> <span class="token class-name">uint8_t</span> input<span class="token punctuation">,</span> <span class="token class-name">int8_t</span> hp_gain<span class="token punctuation">,</span> <span class="token class-name">int8_t</span> line_gain<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">I2S_start</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">uint8_t</span> <span class="token function">I2S_isTxBufferFree</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="control-de-hardware">Control de Hardware </h3>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token keyword keyword-void">void</span> <span class="token function">LedsSwInit</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">uint8_t</span> <span class="token function">Sw2Read</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-void">void</span> <span class="token function">LedRGB</span><span class="token punctuation">(</span><span class="token class-name">rgb_color_t</span> color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h2 id="notas-técnicas">Notas Técnicas </h2>
+<ul>
+<li><strong>Base de Tiempos</strong>: SysTick configurado a 1ms</li>
+<li><strong>Gestión de Buffers</strong>: I2S con buffers de doble tamaño para audio continuo</li>
+<li><strong>Debounce</strong>: Implementado en software para pulsadores</li>
+<li><strong>Colores RGB</strong>: 8 estados predefinidos (OFF, RED, GREEN, BLUE, YELLOW, MAGENTA, CYAN, WHITE)</li>
+</ul>
+<h2 id="autor">Autor </h2>
+<p>Proyecto desarrollado para la asignatura <strong>656_30319_SEMP</strong> - Sistemas Empotrados y de Tiempo Real.</p>
+<p><strong>Fecha</strong>: Octubre 2025</p>
+<h2 id="referencias">Referencias </h2>
+<ul>
+<li><a href="https://tinyurl.com/3vbre3dn">Organización de Tareas</a></li>
+<li>David E. Simon, "An Embedded Software Primer", Addison-Wesley 2005</li>
+<li>Documentación del microcontrolador FM4 S6E2CC</li>
+<li>Datasheet del codec WM8731</li>
+</ul>
+
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#lab-3---generación-y-control-de-señales-con-dds" class="md-toc-link"><p>Lab 3 - Generación y Control de Señales con DDS</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#descripción" class="md-toc-link">
+            <p>Descripción</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#características-principales" class="md-toc-link">
+            <p>Características Principales</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#estructura-del-proyecto" class="md-toc-link">
+            <p>Estructura del Proyecto</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#ejercicios-implementados" class="md-toc-link"><p>Ejercicios Implementados</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ejercicio-31-generación-de-señales-en-cuadratura" class="md-toc-link">
+            <p>Ejercicio 3.1: Generación de Señales en Cuadratura</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ejercicio-32-síntesis-fm---efecto-sirena" class="md-toc-link">
+            <p>Ejercicio 3.2: Síntesis FM - Efecto Sirena</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ejercicio-33-control-por-pulsaciones" class="md-toc-link">
+            <p>Ejercicio 3.3: Control por Pulsaciones</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#sistema-dds-direct-digital-synthesis" class="md-toc-link"><p>Sistema DDS (Direct Digital Synthesis)</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#estructura-dds" class="md-toc-link">
+            <p>Estructura DDS</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#hardware-utilizado" class="md-toc-link"><p>Hardware Utilizado</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#placa-de-desarrollo-fm4-176l-s6e2cc-eth" class="md-toc-link">
+            <p>Placa de Desarrollo FM4-176L-S6E2CC-ETH</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#periféricos" class="md-toc-link">
+            <p>Periféricos</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#leds-y-controles" class="md-toc-link">
+            <p>LEDs y Controles</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#organización-de-tareas" class="md-toc-link"><p>Organización de Tareas</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#tareas-de-1ms-systick" class="md-toc-link">
+            <p>Tareas de 1ms (SysTick)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#tareas-de-audio-i2s" class="md-toc-link">
+            <p>Tareas de Audio (I2S)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#tareas-continuas" class="md-toc-link">
+            <p>Tareas Continuas</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#compilación-y-uso" class="md-toc-link"><p>Compilación y Uso</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#requisitos" class="md-toc-link">
+            <p>Requisitos</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#pasos-de-compilación" class="md-toc-link">
+            <p>Pasos de Compilación</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#configuración-de-audio" class="md-toc-link">
+            <p>Configuración de Audio</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#uso-del-sistema" class="md-toc-link">
+            <p>Uso del Sistema</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#funciones-principales" class="md-toc-link"><p>Funciones Principales</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#control-de-dds" class="md-toc-link">
+            <p>Control de DDS</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#control-de-audio" class="md-toc-link">
+            <p>Control de Audio</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#control-de-hardware" class="md-toc-link">
+            <p>Control de Hardware</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#notas-técnicas" class="md-toc-link">
+            <p>Notas Técnicas</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#autor" class="md-toc-link">
+            <p>Autor</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#referencias" class="md-toc-link">
+            <p>Referencias</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

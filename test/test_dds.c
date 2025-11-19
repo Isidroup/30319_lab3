@@ -1,0 +1,90 @@
+/**
+ * @file    test_dds.c
+ * @brief   Pruebas unitarias para el módulo DDS (Direct Digital Synthesis).
+ * @date    :2025/10/03 16:29:31
+ * @details Este archivo contiene diferentes casos de prueba para validar la generación
+ *          de señales mediante DDS, comprobando la evolución de la amplitud en distintas
+ *          configuraciones de fase e incremento de fase.
+ *
+ *          El incremento de fase se calcula como:
+ *              phase_inc = 2^16 * fo / fs
+ *          donde fs = 48000 Hz (frecuencia de muestreo) y fo es la frecuencia de salida deseada.
+ */
+
+#include <stdint.h>
+#include "dds.h"
+
+/**
+ * @var g_sample
+ * @brief Contador de muestras para simular el avance temporal en las pruebas.
+ */
+__attribute__((section(".bss.noinit")))
+uint16_t g_sample=0;
+
+/**
+ * @var g_amp
+ * @brief Valor de la muestra generada por el DDS.
+ */
+int16_t g_amp;
+
+
+/**
+ * @brief   Función principal de pruebas para DDS.
+ * @details Ejecuta cinco casos de prueba para validar diferentes configuraciones del DDS.
+ * @return  0 al finalizar la ejecución.
+ */
+int main ()
+{
+    static dds16bits_t dds_1; // ¿Es necesario static aquí?
+
+    // Test1: Señal 1 kHz durante 10 ms
+    DDS16Bits_setPhase(&dds_1, 0);
+    DDS16Bits_setPhaseInc(&dds_1, 1365);
+    for (int i = 0; i < 48*10; i++)
+    {
+        g_sample = (g_sample < 47) ? g_sample + 1 : 0;
+        g_amp = DDS16Bits_getNextSample(&dds_1);
+    }
+
+    // Test2: Cambio a 2 kHz durante 5 ms
+    DDS16Bits_setPhaseInc(&dds_1, 2731);
+    for (int i = 0; i < 48*5; i++)
+    {
+        g_sample = (g_sample < 47) ? g_sample + 1 : 0;
+        g_amp = DDS16Bits_getNextSample(&dds_1);
+    }
+
+    // Test3: Cambios de fase con fo = 1 kHz (0°-180°-0°-180°-0°)
+    DDS16Bits_setPhaseInc(&dds_1, 1365);
+    uint16_t fases[] = {0, 32768, 0, 32768, 0};
+    for (int j = 0; j < 5; j++)
+    {
+        DDS16Bits_setPhase(&dds_1, fases[j]);
+        for (int i = 0; i < 48; i++)
+        {
+            g_sample = (g_sample < 47) ? g_sample + 1 : 0;
+            g_amp = DDS16Bits_getNextSample(&dds_1);
+        }
+    }
+
+    // Test4: Oscilador parado (fo = 0 Hz) durante 5 ms
+    DDS16Bits_setPhase(&dds_1, 0);
+    DDS16Bits_setPhaseInc(&dds_1, 0);
+    for (int i = 0; i < 48*5; i++)
+    {
+        g_sample = (g_sample < 47) ? g_sample + 1 : 0;
+        g_amp = DDS16Bits_getNextSample(&dds_1);
+    }
+
+    // Test5: Chirp lineal de 73 Hz a 5.86 kHz en 20 ms
+    for (int i = 0; i < 48*20; i++)
+    {
+        g_sample = (g_sample < 47) ? g_sample + 1 : 0;
+        uint16_t phase_inc = 100 + ((8000 - 100) * i) / (48*20);
+        DDS16Bits_setPhaseInc(&dds_1, phase_inc);
+        g_amp = DDS16Bits_getNextSample(&dds_1);
+    }
+    // Punto de parada para depuración. Finalización del programa.
+    __asm volatile ("BKPT #0");
+    return 0;
+}
