@@ -1,17 +1,28 @@
 /**
  * @file ejercicios.c
  * @brief Implementación de las funciones para las prácticas de laboratorio 3.
- * @date :2025/10/03 16:25:10
+ * @date :2026/10/07 09:27:16
  */
 
 #include "ejercicios.h"
+
+#include "FM4_WM8731.h"
+#include <stdint.h>
 
 /**
  * @brief Genera dos señales en cuadratura de 1 kHz.
  */
 void lab31(void)
 {
+    // Canales de salida del codec
+    int16_t sample_left;
+    int16_t sample_right;
 
+    // Cálculo de los valores de amplitud de las dos señales
+    //   >>> Incluir aquí el código <<<
+
+    // Pasa datos al codec
+    FM4_WM8731_wr(sample_left, sample_right);
 }
 
 /**
@@ -21,7 +32,15 @@ void lab31(void)
  */
 void lab32(void)
 {
+    // Canales de salida del codec
+    int16_t sample_left;
+    int16_t sample_right;
 
+    // Cálculo de los valores de amplitud de las dos señales
+    //   >>> Incluir aquí el código <<<
+
+    // Pasa datos al codec
+    FM4_WM8731_wr(sample_left, sample_right);
 }
 
 /**
