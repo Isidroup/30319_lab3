@@ -5,7 +5,7 @@
  *          pulsadores, LEDs y generación de señales analógicas mediante síntesis
  *          digital directa (DDS) en la placa FM4-176L-S6E2CC-ETH.
  *
- * @date    :2025/10/03 16:13:35
+ * @date    :2026/10/07 08:08:12
  *
  * @note    Organización de tareas: https://tinyurl.com/3vbre3dn
  */
@@ -82,8 +82,22 @@ int32_t main(void) {
       // lab31();
       //   Ejercicio 3.2. Síntesis FM, efecto de sirena
       // lab32();
-      //   Ejercicio 3.3. COntrol de la generación de señal mediante pulsaciones
+      //   Ejercicio 3.3. Control de la generación de señal mediante pulsaciones
       // lab33(pulsacion);
+
+#ifdef _LAB3_DEBUG_
+      // Cambia el estado de P7D cada vez que hay espacio para transmitir una
+      // muestra. Mide con el osciloscopio el intervalo entre flancos para
+      // comprobar el periodo de muestreo y la ejecución periódica del superloop.
+      GPIO_ChannelToggle(P7D);
+
+      // Detiene la ejecución si I2S detecta un underrun, lo que indica que no
+      // se han suministrado muestras a tiempo para mantener la transmisión.
+      if (I2S_get_tx_underrun())
+      {
+        __asm volatile ("BKPT #0");
+      }
+#endif
     }
 
     // 🗲 Tareas que se ejecuta siempre
