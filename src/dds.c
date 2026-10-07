@@ -1,7 +1,7 @@
 /**
  * @file dds.c
  * @brief Implementación de funciones para un DDS (Direct Digital Synthesis) de 16 bits.
- * @date :2026/10/06 21:03:59
+ * @date :2026/10/07 20:08:20
  */
 
 #include <stdint.h>
@@ -35,7 +35,7 @@ static int16_t dds_16_bits_phase_to_amplitude(uint16_t phase)
 /**
  * @brief    Da valor a la fase en un objeto de tipo DDS16Bits
  */
-void dds_16_bits_set_phase(dds16bits_t *self, uint16_t phase)
+void dds_16_bits_set_phase(dds_16_bits_t *self, uint16_t phase)
 {
 
 
@@ -53,7 +53,7 @@ void dds_16_bits_set_phase_increment(dds_16_bits_t *self, uint16_t phaseinc)
 /**
  * @brief   Devuelve el siguiente valor de amplitud de la señal
  */
-int16_t dds_16_bits_get_next_sample(dds16bits_t *self)
+int16_t dds_16_bits_get_next_sample(dds_16_bits_t *self)
 {
     int16_t amp ;
 
