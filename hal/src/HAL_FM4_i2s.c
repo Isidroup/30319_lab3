@@ -105,3 +105,15 @@ uint8_t I2S_isTxBufferFree(void)
 {
     return (bFM4_I2S0_STATUS_TXFI == 1);
 }
+
+
+/**
+ * @brief Obtiene el estado de underrun de transmisión del registro STATUS de I2S.
+ */
+uint8_t I2S_get_tx_underrun(void)
+{
+    uint32_t status_reg = FM4_I2S0->STATUS;
+    // Bit 27: TXUDR0, Bit 28: TXUDR1
+    // Se desplaza 27 posiciones a la derecha y se aplica una máscara con 0x03 (0b00000011)
+    return (uint8_t)((status_reg >> 27) & 0x03);
+}

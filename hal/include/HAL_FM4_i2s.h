@@ -14,4 +14,14 @@ void I2S_start(void);
 uint8_t I2S_isTxBufferFree(void);
 
 
+/**
+ * @brief Obtiene el estado de underrun de transmisión del registro STATUS de I2S.
+ *
+ * @return uint8_t Devuelve:
+ *         - Bit 0: TXUDR0 (Underrun durante la trama)
+ *         - Bit 1: TXUDR1 (Underrun al inicio de la trama)
+ */
+uint8_t I2S_get_tx_underrun(void);
+
+
 #endif
