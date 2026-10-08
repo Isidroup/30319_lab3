@@ -5,7 +5,7 @@
  *          pulsadores, LEDs y generación de señales analógicas mediante síntesis
  *          digital directa (DDS) en la placa FM4-176L-S6E2CC-ETH.
  *
- * @date    :2026/10/07 08:08:12
+ * @date    :2026/10/08 11:22:40
  *
  * @note    Organización de tareas: https://tinyurl.com/3vbre3dn
  */
@@ -75,35 +75,28 @@ int32_t main(void) {
       LedRGB(color[contador]);
     }
 
-    // 🗲 Tarea que se ejecuta cuando hay hueco en el buffer de salida de I2S0
-    if (I2S_isTxBufferFree()) {
-      // Tarea4:
-      //   Ejercicio 3.1: Generación de dos señales en cuadratura
-      // lab31();
-      //   Ejercicio 3.2. Síntesis FM, efecto de sirena
-      // lab32();
-      //   Ejercicio 3.3. Control de la generación de señal mediante pulsaciones
-      // lab33(pulsacion);
+    // 🗲 Tarea 4: se ejecuta cuando hay hueco en el buffer de salida de I2S0
+    if (I2S_isTxBufferFree())
+    {
+        #ifdef _LAB3_DEBUG_
+            // Marca el inicio del procesamiento de una muestra.
+            GPIO_ChannelWrite(P7D, GPIO_HIGH);
+        #endif
 
-#ifdef _LAB3_DEBUG_
-      // Cambia el estado de P7D cada vez que hay espacio para transmitir una
-      // muestra. Mide con el osciloscopio el intervalo entre flancos para
-      // comprobar el periodo de muestreo y la ejecución periódica del superloop.
-      GPIO_ChannelToggle(P7D);
+        lab31();  // Sustituir por lab32(), lab33() ... según el ejercicio.
 
-      // Detiene la ejecución si I2S detecta un underrun, lo que indica que no
-      // se han suministrado muestras a tiempo para mantener la transmisión.
-      if (I2S_get_tx_underrun())
-      {
-        __asm volatile ("BKPT #0");
-      }
-#endif
-    }
+        #ifdef _LAB3_DEBUG_
+            // Marca el final del procesamiento. La anchura del pulso indica
+            // cuánto tarda la función en generar y enviar la muestra.
+            GPIO_ChannelWrite(P7D, GPIO_LOW);
 
-    // 🗲 Tareas que se ejecuta siempre
-    if (1) {
-      // Tarea 5: Encendido del led ETH con efecto breathing
-      breath_led(LED_ETH);
+            // Detiene la ejecución si I2S indica que no se suministró una
+            // muestra a tiempo para mantener la transmisión.
+            if (I2S_get_tx_underrun())
+            {
+                __asm volatile ("BKPT #0");
+            }
+        #endif
     }
   }
 }
